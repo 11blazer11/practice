@@ -33,7 +33,7 @@ class Movie(models.Model):
 
     actors = models.ManyToManyField(Actor, related_name="movies")
 
-    director = models.OneToOneField(Director, on_delete=models.CASCADE, related_name="movies")
+    director = models.ForeignKey(Director, on_delete=models.CASCADE, related_name="movies")
 
     def __str__(self):
         return self.title
